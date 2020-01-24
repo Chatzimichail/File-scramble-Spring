@@ -33,7 +33,7 @@ public class InputTXT implements Input {
 
     }
 
-    public   ArrayList<ArrayList<String>> readFromAnywhere (String firstFileName, String secondFileName) {
+    public   void readFromAnywhere (InputData firstFileName, InputData secondFileName) {
 
         CompressAES compress = new CompressAES();
         String lineJustFetched ;
@@ -41,11 +41,11 @@ public class InputTXT implements Input {
 
         try
         {
-            BufferedReader buf = new BufferedReader(new FileReader("C:\\Users\\dchatzimichail\\Desktop\\" + firstFileName ));
-            System.out.println("The file " + firstFileName+" was found");
+            BufferedReader buf = new BufferedReader(new FileReader("C:\\Users\\dchatzimichail\\Desktop\\" + firstFileName.getNameOfFile() ));
+            System.out.println("The file " + firstFileName.getNameOfFile()+" was found");
 
-            BufferedReader buf2 = new BufferedReader(new FileReader("C:\\Users\\dchatzimichail\\Desktop\\" + secondFileName ));
-            System.out.println("The file "+secondFileName+" was found");
+            BufferedReader buf2 = new BufferedReader(new FileReader("C:\\Users\\dchatzimichail\\Desktop\\" + secondFileName.getNameOfFile() ));
+            System.out.println("The file "+secondFileName.getNameOfFile()+" was found");
 
 
             // Parse from first File
@@ -99,9 +99,9 @@ public class InputTXT implements Input {
         }
 
 
-        words = compress.compressData(words,config);
-
-        return words;
+//        words = compress.compressData(words,config);
+//
+//        return words;
 
     }
 

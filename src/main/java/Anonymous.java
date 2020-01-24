@@ -12,14 +12,8 @@ public class Anonymous {
 
 
         Input input = context.getBean("inputTxt", Input.class);
-        Output output = context.getBean("output", Output.class);
         CompressAES compress = context.getBean("compress", CompressAES.class);
 
-
-
-        //Input input = new InputTXT();
-       // CompressAES compress = new CompressAES();
-        //Output output = new OutPutTxt();
 
 
         try (Scanner myObj = new Scanner(System.in)) {
@@ -32,16 +26,22 @@ public class Anonymous {
 
         System.out.println("Give me the file name");
         //String file1 = myObj.nextLine();
-        String file1 = "Test.txt";
+        InputData file1 = new InputData("Test.txt");
 
         System.out.println("Give me the second file name");
         //String file2 = myObj.nextLine();
-        String file2 = "test2.txt";
+        InputData file2 = new InputData("test2.txt");
+
 
         System.out.println("Give me the name of the exported file");
         System.out.println("");
         //String name = myObj.nextLine();
         String name = "OutPut.txt";
+
+        System.out.println("Give me the name of the Algorithm");
+        System.out.println("");
+        //String name = myObj.nextLine();
+        String nameOfAlgorithm = "AES";
 
 
         // tou dino ta dio onomata arxion gia na diabasi
@@ -52,13 +52,15 @@ public class Anonymous {
         config = input.getConfig();
 
         //dino ta dio arxia mou gia comprress kai mou epistrefi to katakermatismeno arxio
-        words = compress.compressData(words,config);
+        words = compress.compressData(words,config,nameOfAlgorithm);
+
+        OutPutData.OutPut(name,words);
 
         //dino to onoma tou eksagomenou arxiou gia dimiourgia
-        output.CreateFile(name);
+        //output.CreateFile(name);
 
         //stelno to katakermatismeno arxio gia grapsimo sto eksagomeno arxio
-        System.out.println( output.filePopulate(words) ? "File was created successfully " : "File was not created successfully ");
+        //System.out.println( output.filePopulate(words) ? "File was created successfully " : "File was not created successfully ");
 
     }
 

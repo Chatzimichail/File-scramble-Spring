@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public interface Input {
 
-    ArrayList<ArrayList<String>>  readFromAnywhere(String firstFileName, String secondFileName);
+    void  readFromAnywhere(InputData firstFileName, InputData secondFileName);
 
      ArrayList<ArrayList<String>> getWords();
 
