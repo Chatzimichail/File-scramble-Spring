@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 
-public interface Compress <dataType, configType>{
+public interface Compress{
 
-   ArrayList<ArrayList<String>> compressData(dataType data, configType config,  String nameOfAlgorithm);
+   static ArrayList<ArrayList<String>> compressAES(ArrayList<ArrayList<String>>  data, ArrayList<String>  config,  String nameOfAlgorithm){
+      return null;
+   };
+
 
 }

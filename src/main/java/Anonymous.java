@@ -12,7 +12,6 @@ public class Anonymous {
 
 
         Input input = context.getBean("inputTxt", Input.class);
-        CompressAES compress = context.getBean("compress", CompressAES.class);
 
 
 
@@ -44,23 +43,19 @@ public class Anonymous {
         String nameOfAlgorithm = "AES";
 
 
-        // tou dino ta dio onomata arxion gia na diabasi
+        // του δίνω τα δύο ονόματα των αρχείων για να τα διαβάσει
         input.readFromAnywhere(file1, file2);
 
-        // perno piso se morfi pinaka ta dio arxia pou diabasa
+        //παίρνω πίσω σε μορφή πίνακα τα δύο αρχεία που διάβασα
         words = input.getWords();
         config = input.getConfig();
 
-        //dino ta dio arxia mou gia comprress kai mou epistrefi to katakermatismeno arxio
-        words = compress.compressData(words,config,nameOfAlgorithm);
+        //δίνω τα δύο αρχεία μου για κατακερματισμό και μου επιστρέφει το κατακερματισμένο αρχείο
+        words = CompressData.compressData(words,config,nameOfAlgorithm);
 
+        //δίνω το όνομα του εξαγόμενου αρχείου που θέλω να μου δημιουργήσει και το κατακερματισμένο αρχείο με τα οποίο θα το γεμίσει
         OutPutData.OutPut(name,words);
 
-        //dino to onoma tou eksagomenou arxiou gia dimiourgia
-        //output.CreateFile(name);
-
-        //stelno to katakermatismeno arxio gia grapsimo sto eksagomeno arxio
-        //System.out.println( output.filePopulate(words) ? "File was created successfully " : "File was not created successfully ");
 
     }
 

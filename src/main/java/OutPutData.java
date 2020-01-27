@@ -12,7 +12,10 @@ public class OutPutData {
             AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Binding.class);
             Output output = context.getBean("output", Output.class);
 
+            //δίνω το όνομα του εξαγόμενου αρχείου
             output.CreateFile(name);
+
+            //στέλνω το κατακερματισμένο αρχείο για γράψιμο στο εξαγόμενο αρχείο
             System.out.println( output.filePopulate(array) ? "File was created successfully " : "File was not created successfully ");
 
         }

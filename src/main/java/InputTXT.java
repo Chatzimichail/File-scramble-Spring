@@ -35,7 +35,7 @@ public class InputTXT implements Input {
 
     public   void readFromAnywhere (InputData firstFileName, InputData secondFileName) {
 
-        CompressAES compress = new CompressAES();
+        //CompressAES compress = new CompressAES();
         String lineJustFetched ;
         String[] wordsArray;
 
